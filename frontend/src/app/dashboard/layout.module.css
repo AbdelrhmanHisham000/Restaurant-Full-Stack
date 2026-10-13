@@ -1,0 +1,22 @@
+.shell {
+  --bg: #f5f6f8; --surface: #fff; --ink: #1b1f2a; --muted: #6b7280;
+  --line: #e4e7ec; --brand: #1f6f5c; --brand-ink: #fff; --danger: #c0392b;
+  --sidebar: #16302b; --radius: 8px;
+  display: flex; min-height: 100vh; background: var(--bg); color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.shell * { box-sizing: border-box; }
+.sidebar { width: 220px; background: var(--sidebar); color: #cfe3dd; padding: 24px 12px; position: sticky; top: 0; height: 100vh; flex-shrink: 0; }
+.logo { font-size: 20px; color: #fff; padding: 0 12px 24px; }
+.nav { display: flex; flex-direction: column; gap: 4px; }
+.link { padding: 10px 12px; border-radius: var(--radius); text-decoration: none; color: inherit; }
+.link:hover { background: rgba(255, 255, 255, 0.08); }
+.active { background: var(--brand); color: #fff; }
+.main { flex: 1; padding: 32px; min-width: 0; }
+@media (max-width: 720px) {
+  .shell { flex-direction: column; }
+  .sidebar { width: 100%; height: auto; position: static; padding: 12px; }
+  .logo { padding-bottom: 8px; }
+  .nav { flex-direction: row; flex-wrap: wrap; }
+  .main { padding: 16px; }
+}
